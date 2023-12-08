@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-function App() {
-  const [count, setCount] = useState(0)
+import aedLogo from '/aed.webp';
+import './App.css';
+
+function TopBarItem({ children, menuOpen }) {
+  return <a className={`top-bar-item${menuOpen ? ' visible' : ''}`} href='#'>{children}</a>;
+}
+TopBarItem.propTypes = {
+  children: PropTypes.string.isRequired,
+  menuOpen: PropTypes.bool.isRequired,
+};
+
+function TopBar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  console.log('menuOpen', menuOpen);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='top-bar'>
+      <div className='top-bar-left'>
+        <img className='logo' src={aedLogo} alt="AED" />
+        <div className={`mobile-menu${menuOpen ? ' menu-open' : ''}`} onClick={() => setMenuOpen((prev) => !prev)}>Menu</div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className='top-bar-right'>
+        <TopBarItem menuOpen={menuOpen}>About</TopBarItem>
+        <TopBarItem menuOpen={menuOpen}>Projects</TopBarItem>
+        <TopBarItem menuOpen={menuOpen}>Join us</TopBarItem>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div >
+  );
 }
 
-export default App
+function App() {
+  return <TopBar />;
+}
+
+export default App;
