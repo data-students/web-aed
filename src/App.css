@@ -29,6 +29,7 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 1.2em;
+    height: 20px;
   }
 
   .mobile-menu {
@@ -88,6 +89,7 @@
       text-align: center;
       border: 1px solid #242424;
       border-top: 0;
+      height: auto;
     }
 
     .visible {
