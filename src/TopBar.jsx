@@ -33,7 +33,7 @@ function TopBar() {
   return (
     <div className={`top-bar ${menuOpen ? ' solid' : ''}`}>
       <div className='top-bar-left'>
-        <img className='logo' src={aedLogo} alt="AED" />
+        <img className='logo' src={aedLogo} alt='AED' width='161' height='72' />
         <MenuButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>
       <div className='top-bar-right'>
