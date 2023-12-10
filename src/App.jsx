@@ -1,52 +1,31 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import TopBar from './TopBar';
 
-import aedLogo from '/aed.webp';
-import './App.css';
+const Home = () => (
+  <div className='home'>
+    <div className='home-content'>
+      <h1 className='home-title'>Som l'Associació d'Estudiants de Dades</h1>
+      <h2 className='home-subtitle'>La comunitat de Data Science de la UPC</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget ultricies ultricies, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl.</p>
 
-const MenuButton = ({ menuOpen, setMenuOpen }) => (
-  <div className={`mobile-menu${menuOpen ? ' menu-open' : ''}`} onClick={() => setMenuOpen((prev) => !prev)}>
-    <div className='bar' />
-    <div className='bar' />
-    <div className='bar' />
+    </div>
   </div>
 );
-MenuButton.propTypes = {
-  menuOpen: PropTypes.bool.isRequired,
-  setMenuOpen: PropTypes.func.isRequired,
-};
-
-const TopBarItem = ({ children, menuOpen, setMenuOpen }) => (
-  <a onClick={() => setMenuOpen(false)} className={`top-bar-item${menuOpen ? ' visible' : ''}`} href='#'>
-    {children}
-  </a>
-);
-TopBarItem.propTypes = {
-  children: PropTypes.string.isRequired,
-  menuOpen: PropTypes.bool.isRequired,
-  setMenuOpen: PropTypes.func.isRequired,
-};
-
-function TopBar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  return (
-    <div className='top-bar'>
-      <div className='top-bar-left'>
-        <img className='logo' src={aedLogo} alt="AED" />
-        <MenuButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      </div>
-      <div className='top-bar-right'>
-        <TopBarItem menuOpen={menuOpen} setMenuOpen={setMenuOpen}>About</TopBarItem>
-        <TopBarItem menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Projects</TopBarItem>
-        <TopBarItem menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Join us</TopBarItem>
-      </div>
-    </div >
-  );
-}
 
 function App() {
-  return <TopBar />;
+  return (
+    <>
+      <TopBar />
+      <Home />
+    </>
+  );
 }
 
 export default App;
