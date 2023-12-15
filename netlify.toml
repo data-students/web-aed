@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://datastudents.netlify.app"
+  to = "https://aed.cat"
+  status = 301
+  force = true
