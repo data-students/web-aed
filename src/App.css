@@ -1,12 +1,54 @@
-.home {
-  padding-top: 180px;
+.section {
   display: block;
   width: calc(100% - 8em);
-  min-height: 100vh;
-  background-color: rgb(145, 107, 198);
   padding-left: 4em;
   padding-right: 4em;
-  padding-bottom: 15vw;
+}
+
+#nosaltres {
+  padding-top: 180px;
+  min-height: 100vh;
+  padding-bottom: 2vw;
+  background-color: rgb(145, 107, 198);
+}
+
+#unir-se {
+  padding-top: 220px;
+  padding-bottom: 250px;
+  background-color: #2b2632;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230f0d11' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+}
+
+.grid-text {
+  margin-right: 3em;
+}
+
+.button {
+  padding: 1.5em 2em;
+  background-color: rgba(230, 230, 230, .5);
+  backdrop-filter: blur(10px);
+  border: 1px solid #242424;
+  color: #242424 !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2em;
+  height: 20px;
+  width: fit-content;
+  text-wrap: nowrap;
+}
+
+.footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #2b2632;
+  color: white;
+  text-align: center;
 }
 
 h1 {
@@ -22,6 +64,23 @@ h2 {
   text-align: justify;
   color: white;
   line-height: 1.1 !important;
+  margin-bottom: 30px !important;
+}
+
+h3 {
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  text-align: justify;
+  color: white;
+  line-height: 1.1 !important;
+  margin-bottom: 30px !important;
+}
+
+p {
+  font-size: 25px !important;
+  color: white;
+  text-align: justify;
+  line-height: 1.1 !important;
 }
 
 a {
@@ -32,12 +91,55 @@ a:visited {
   color: white;
 }
 
+
+i {
+  font-style: italic !important;
+}
+
+.footer p {
+  font-size: 18px !important;
+}
+
+ul {
+  padding-bottom: 25px !important;
+}
+
+li {
+  text-align: left;
+  padding-bottom: 10px !important;
+}
+
+li a {
+  text-decoration: none;
+}
+
+.subtitle {
+  font-size: 60px !important;
+}
+
 @media (max-width: 768px) {
-  .home {
-    padding-top: 120px;
+
+  .section {
     width: calc(100% - 4em);
     padding-left: 2em;
     padding-right: 2em;
+  }
+
+  #nosaltres {
+    padding-top: 120px;
+  }
+
+  #unir-se {
+    padding-top: 150px;
+  }
+
+  .grid {
+    flex-direction: column;
+  }
+
+  .grid-text {
+    margin-right: 0;
+    margin-bottom: 2.5em;
   }
 
   h1 {
@@ -48,4 +150,13 @@ a:visited {
   h2 {
     font-size: 30px !important;
   }
+
+  .footer p {
+    text-align: left;
+  }
+
+  .subtitle {
+    font-size: 40px !important;
+  }
+
 }

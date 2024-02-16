@@ -16,12 +16,13 @@ MenuButton.propTypes = {
   setMenuOpen: PropTypes.func.isRequired,
 };
 
-const TopBarItem = ({ children, menuOpen, setMenuOpen }) => (
-  <a onClick={() => setMenuOpen(false)} className={`top-bar-item${menuOpen ? ' visible' : ''}`} href='#'>
+const TopBarItem = ({ id, children, menuOpen, setMenuOpen }) => (
+  <a onClick={() => setMenuOpen(false)} className={`top-bar-item${menuOpen ? ' visible' : ''}`} href={`#${id}`}>
     {children}
   </a>
 );
 TopBarItem.propTypes = {
+  id: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
   menuOpen: PropTypes.bool.isRequired,
   setMenuOpen: PropTypes.func.isRequired,
@@ -37,9 +38,9 @@ function TopBar() {
         <MenuButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>
       <div className='top-bar-right'>
-        <TopBarItem menuOpen={menuOpen} setMenuOpen={setMenuOpen}>About</TopBarItem>
+        <TopBarItem id='nosaltres' menuOpen={menuOpen} setMenuOpen={setMenuOpen}>About</TopBarItem>
         <TopBarItem menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Projects</TopBarItem>
-        <TopBarItem menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Join us</TopBarItem>
+        <TopBarItem id='unir-se' menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Uneix-te!</TopBarItem>
       </div>
     </div >
   );
