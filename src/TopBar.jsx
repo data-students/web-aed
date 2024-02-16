@@ -38,8 +38,8 @@ function TopBar() {
         <MenuButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>
       <div className='top-bar-right'>
-        <TopBarItem id='nosaltres' menuOpen={menuOpen} setMenuOpen={setMenuOpen}>About</TopBarItem>
-        <TopBarItem menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Projects</TopBarItem>
+        <TopBarItem id='nosaltres' menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Qui som?</TopBarItem>
+        <TopBarItem menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Projectes</TopBarItem>
         <TopBarItem id='unir-se' menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Uneix-te!</TopBarItem>
       </div>
     </div >
