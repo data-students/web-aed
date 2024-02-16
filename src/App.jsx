@@ -25,7 +25,9 @@ const JoinUs = () => (
     <div className='grid'>
       <div className='grid-text'>
         <h3>Si ets estudiant o <i>alumni</i> del grau en ciència i enginyeria de dades de la UPC, pots unir-te a l&apos;associació!</h3>
-        <p>És completament gratuit! També pots seguir-nos a les nostres xarxes socials per estar al dia de les nostres activitats!</p>
+        <p>És completament gratuït!</p>
+        <p>Si vols col·laborar activament, escriu-nos a <Link href='mailto:hola@aed.cat'>hola@aed.cat</Link>! Estem oberts a noves idees!
+        </p>
       </div>
       <a className='button'>Em vull unir!</a>
     </div>
