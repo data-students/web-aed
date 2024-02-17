@@ -19,6 +19,62 @@ const Home = () => (
   </div>
 );
 
+
+const Card = ({ title, img, text, button_text = 'Més informació', href }) => (
+  <div className='card'>
+    <img src={img} alt={title} />
+    <div className='card-content'>
+      <div>
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </div>
+      <a className='button' href={href} target='blank' rel='noopener' >{button_text}</a>
+    </div>
+  </div>
+);
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  button_text: PropTypes.string,
+  href: PropTypes.string,
+};
+
+const Projects = () => (
+  <div className='section' id='projectes'>
+    <h2 className='subtitle'>Els nostres projectes</h2>
+    <div className='grid'>
+      <Card
+        title='Datathon FME'
+        img='https://datathon.cat/img/promo.jpeg'
+        text='La datató més gran de Catalunya. Un esdeveniment de 30 hores on els equips resolen reptes reals amb ciència de dades i IA.'
+        button_text='Lloc web oficial'
+        href='https://datathon.cat'
+      />
+      <Card
+        title='Data Days'
+        img='https://datathon.cat/img/promo.jpeg'
+        text='Un cicle de xerrades, tallers i activitats al voltant de la ciència i enginyeria de dades. Per a estudiants de tots els nivells i professionals!'
+        button_text='Aviat...'
+      />
+      <Card
+        title='Apunts Dades'
+        img='https://datathon.cat/img/promo.jpeg'
+        text='Un recull d&apos;apunts i exàmens de les assignatures del nostre grau. Amb una plataforma col·laborativa on preguntar i resoldre dubtes.'
+        button_text='Entra-hi!'
+        href='https://apunts.aed.cat'
+      />
+      <Card
+        title='Plataforma virtual'
+        img='./alumni-mes.jpg'
+        text='Administrem un club en línea a la plataforma UPC AlumniMés, on compartir experiències i ofertes de feina per a la comunitat.'
+        button_text="Apunta-t'hi!"
+        href='https://alumnimes.upc.edu/groups/30/feed'
+      />
+    </div>
+  </div>
+);
+
 const JoinUs = () => (
   <div className='section' id='unir-se'>
     <h2 className='subtitle'>Vols unir-te?</h2>
@@ -53,6 +109,7 @@ function App() {
     <>
       <TopBar />
       <Home />
+      <Projects />
       <JoinUs />
       <Footer />
     </>
