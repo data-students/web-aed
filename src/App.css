@@ -53,7 +53,6 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -64,6 +63,7 @@
 
 .grid-text {
   margin-right: 3em;
+  margin-bottom: 1em;
 }
 
 .button {
@@ -156,7 +156,7 @@ li a {
 }
 
 @media (max-width: 992px) {
-  #projectes {
+  .section {
     width: calc(100% - 4em) !important;
     padding-left: 2em !important;
     padding-right: 2em !important;
@@ -170,13 +170,11 @@ li a {
 @media (max-width: 768px) {
 
   .section {
-    width: calc(100% - 4em);
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-top: 120px !important;
   }
 
   #nosaltres {
-    padding-top: 120px;
+    padding-top: 120px !important;
     min-height: calc(98vh - 120px);
   }
 
@@ -195,7 +193,6 @@ li a {
 
   .grid-text {
     margin-right: 0;
-    margin-bottom: 2.5em;
   }
 
   h1 {
