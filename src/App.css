@@ -68,7 +68,7 @@
 
 .button {
   padding: 1.5em 2em;
-  background-color: rgba(230, 230, 230, .5);
+  background-color: rgba(230, 230, 230, .55);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(230, 230, 230, .5);
   color: #242424 !important;
