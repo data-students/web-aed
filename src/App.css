@@ -7,8 +7,8 @@
 
 #nosaltres {
   padding-top: 180px;
-  min-height: 100vh;
-  padding-bottom: 2vw;
+  min-height: calc(98vh - 180px);
+  padding-bottom: 2vh;
   background-color: rgb(145, 107, 198);
 }
 
@@ -22,6 +22,7 @@
 .grid {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .grid-text {
@@ -128,6 +129,7 @@ li a {
 
   #nosaltres {
     padding-top: 120px;
+    min-height: calc(98vh - 120px);
   }
 
   #unir-se {
