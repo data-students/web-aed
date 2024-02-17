@@ -46,27 +46,27 @@ const Projects = () => (
     <div className='grid'>
       <Card
         title='Datathon FME'
-        img='https://datathon.cat/img/promo.jpeg'
+        img='datathon.webp'
         text='La datató més gran de Catalunya. Un esdeveniment de 30 hores on els equips resolen reptes reals amb ciència de dades i IA.'
         button_text='Lloc web oficial'
         href='https://datathon.cat'
       />
       <Card
         title='Data Days'
-        img='https://datathon.cat/img/promo.jpeg'
+        img='data-days.webp'
         text='Un cicle de xerrades, tallers i activitats al voltant de la ciència i enginyeria de dades. Per a estudiants de tots els nivells i professionals!'
         button_text='Aviat...'
       />
       <Card
         title='Apunts Dades'
-        img='https://datathon.cat/img/promo.jpeg'
+        img='apunts.webp'
         text='Un recull d&apos;apunts i exàmens de les assignatures del nostre grau. Amb una plataforma col·laborativa on preguntar i resoldre dubtes.'
         button_text='Entra-hi!'
         href='https://apunts.aed.cat'
       />
       <Card
         title='Plataforma virtual'
-        img='./alumni-mes.jpg'
+        img='alumni-mes.webp'
         text='Administrem un club en línea a la plataforma UPC AlumniMés, on compartir experiències i ofertes de feina per a la comunitat.'
         button_text="Apunta-t'hi!"
         href='https://alumnimes.upc.edu/groups/30/feed'
