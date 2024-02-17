@@ -100,7 +100,7 @@ const Footer = () => (
       <li><Link href='https://youtube.com/@datastudents'>YouTube</Link></li>
       <li><Link href='https://twitter.com/datastudents'>X (Twitter)</Link></li>
     </ul>
-    <p>© 2024 Associació d&apos;Estudiants de Dades</p>
+    <p>© {new Date().getFullYear()} Associació d&apos;Estudiants de Dades</p>
   </div>
 );
 
