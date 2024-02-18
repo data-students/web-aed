@@ -28,7 +28,7 @@ const Card = ({ title, img, text, button_text = 'Més informació', href }) => (
         <h3>{title}</h3>
         <p>{text}</p>
       </div>
-      <a className='button' href={href} target='blank' rel='noopener' >{button_text}</a>
+      <a className='button' href={href} target='blank' rel='noopener'>{button_text}</a>
     </div>
   </div>
 );
@@ -85,7 +85,7 @@ const JoinUs = () => (
         <p>Si vols col·laborar activament, escriu-nos a <Link href='mailto:hola@aed.cat'>hola@aed.cat</Link>! Estem oberts a noves idees!
         </p>
       </div>
-      <a className='button'>Em vull unir!</a>
+      <a className='button' href='https://form.typeform.com/to/h54C62uj' target='blank' rel='noopener'>Em vull unir!</a>
     </div>
   </div >
 );
