@@ -47,7 +47,7 @@ const Projects = () => (
       <Card
         title='Datathon FME'
         img='datathon.webp'
-        text='La datató més gran de Catalunya. Un esdeveniment de 30 hores on els equips resolen reptes reals amb ciència de dades i IA.'
+        text='La datató més gran de Catalunya, amb 300 participants. Un esdeveniment de 30 hores on els equips resolen reptes reals amb ciència de dades i IA.'
         button_text='Lloc web oficial'
         href='https://datathon.cat'
       />
@@ -55,14 +55,14 @@ const Projects = () => (
         title='Data Days'
         img='data-days.webp'
         text='Un cicle de xerrades, tallers i activitats al voltant de la ciència i enginyeria de dades. Per a estudiants de tots els nivells i professionals!'
-        button_text='Aviat...'
+        button_text='Disponible aviat...'
       />
       <Card
         title='Apunts Dades'
         img='apunts.webp'
         text='Un recull d&apos;apunts i exàmens de les assignatures del nostre grau. Amb una plataforma col·laborativa on preguntar i resoldre dubtes.'
         button_text='Entra-hi!'
-        href='https://apunts.aed.cat'
+        href='https://apunts-dades.vercel.app/sign-in'
       />
       <Card
         title='Plataforma virtual'
