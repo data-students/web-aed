@@ -47,7 +47,7 @@ const Projects = () => (
       <Card
         title='Datathon FME'
         img='datathon.webp'
-        text='La datató més gran de Catalunya, amb 300 participants. Un esdeveniment de 30 hores on els equips resolen reptes reals amb ciència de dades i IA.'
+        text='La datató més gran de Catalunya, amb 300 participants. Un esdeveniment de 30 hores en què els equips resolen reptes reals amb ciència de dades i IA.'
         button_text='Lloc web oficial'
         href='https://datathon.cat'
       />
@@ -67,7 +67,7 @@ const Projects = () => (
       <Card
         title='Plataforma virtual'
         img='alumni-mes.webp'
-        text='Administrem un club en línea a la plataforma UPC AlumniMés, on compartir experiències i ofertes de feina per a la comunitat.'
+        text='Administrem un club en línia a la plataforma UPC AlumniMés, on compartir experiències i ofertes de feina per a la comunitat.'
         button_text="Apunta-t'hi!"
         href='https://alumnimes.upc.edu/groups/30/feed'
       />
