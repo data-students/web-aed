@@ -62,7 +62,7 @@ const Projects = () => (
         img='apunts.webp'
         text='Un recull d&apos;apunts i exàmens de les assignatures del nostre grau. Amb una plataforma col·laborativa on preguntar i resoldre dubtes.'
         button_text='Entra-hi!'
-        href='https://apunts-dades.vercel.app/sign-in'
+        href='https://apunts.aed.cat'
       />
       <Card
         title='Plataforma virtual'
