@@ -55,7 +55,8 @@ const Projects = () => (
         title='Data Days'
         img='data-days.webp'
         text='Un cicle de xerrades, tallers i activitats al voltant de la ciència i enginyeria de dades. Per a estudiants de tots els nivells i professionals!'
-        button_text='Disponible aviat...'
+        button_text='Saber-ne més!'
+        href='https://datadays.aed.cat'
       />
       <Card
         title='Apunts Dades'
