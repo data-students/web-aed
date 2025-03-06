@@ -56,14 +56,14 @@ const Projects = () => (
         img='data-days.webp'
         text='Un cicle de xerrades, tallers i activitats al voltant de la ciència i enginyeria de dades. Per a estudiants de tots els nivells i professionals!'
         button_text='Saber-ne més!'
-        href='https://apuntsdades.com'
+        href='https://datadays.aed.cat'
       />
       <Card
         title='Apunts Dades'
         img='apunts.webp'
         text='Un recull d&apos;apunts i exàmens de les assignatures del nostre grau. Amb una plataforma col·laborativa on preguntar i resoldre dubtes.'
         button_text='Entra-hi!'
-        href='https://apunts.aed.cat'
+        href='https://apuntsdades.com'
       />
       <Card
         title='Plataforma virtual'
