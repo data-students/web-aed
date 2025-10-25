@@ -1,133 +1,272 @@
+/* --- Barra Superior --- */
+.top-bar {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  right: 1em;
+  width: auto;
+  background-color: rgb(230, 230, 230); 
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+  border-radius: 12px; 
+  border: none; 
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  
+  margin: 0; 
+  height: 77px;
+  z-index: 10;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+.top-bar.solid {
+  background-color: rgb(230, 230, 230);
+  box-shadow: none; 
+  border-radius: 0; 
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0; 
+  width: 100%;
+}
+
+/* --- Logo y Contenedores --- */
+.logo {
+  padding: 0 1.5em; 
+  max-height: 77px; 
+  object-fit: contain; 
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  padding-right: 1em; 
+}
+
+/* --- Elementos de Navegación --- */
+.top-bar-item {
+  padding: 1em 1.5em; 
+  color: #242424 !important;
+  border: none; 
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em; 
+  line-height: 1; 
+  transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+  height: auto; 
+  border-radius: 8px;
+}
+
+.top-bar-item:not(.btn-highlight):hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #242424 !important;
+}
+
+.top-bar-item.btn-highlight {
+  background-color: #8a63d2;
+  color: rgb(255, 255, 255) !important;
+  padding: 1em 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.top-bar-item.btn-highlight:hover {
+  background-color: #7a53c2;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.language-selector {
+  margin-right: 1.5em;
+  padding: 0.7em 1em;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  color: #242424;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.language-selector:hover {
+  background-color: #f0f0f0;
+}
+
+.language-selector select {
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  padding-right: 1.5em;
+}
+
+.language-selector::after {
+  content: '▼';
+  font-size: 0.7em;
+  color: #666;
+  position: absolute;
+  right: 0.8em;
+  pointer-events: none;
+}
+
+
+.circular-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1em;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.circular-icon-btn:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.circular-icon-btn img, .circular-icon-btn svg {
+    max-width: 60%;
+    max-height: 60%;
+
+}
+
+/* --- Menú Móvil (Hamburguesa) --- */
+.mobile-menu {
+  display: none; 
+  background-color: transparent; 
+  color: #242424;
+  padding: 0 1.2em; 
+  cursor: pointer;
+  border-left: none; 
+  height: 77px; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu div.bar { 
+  width: 28px; 
+  height: 3px; 
+  background-color: #242424;
+  margin-bottom: 5px; 
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu div.bar:last-child {
+  margin-bottom: 0 !important;
+}
+
+
+.menu-open div.bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-open div.bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-open div.bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* --- Media Query para Móviles --- */
+@media (max-width: 768px) {
   .top-bar {
-    position: fixed;
     top: 0;
     left: 0;
-    width: calc(100% - 2em);
-    background-color: rgba(230, 230, 230, .5);
-    backdrop-filter: blur(10px);
-    border: 1px solid #242424;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    background-color: rgb(230, 230, 230);
+    backdrop-filter: none; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .top-bar-left {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 1em;
-    height: 77px;
-    z-index: 10;
-  }
-
-  .logo {
-    padding: 0.2em 1em 0 1em;
+    align-items: center; 
+    width: 100%; 
   }
 
   .top-bar-right {
-    display: flex;
-    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding-right: 0; 
+  }
+  
+  .top-bar-item {
+    display: none;
+    width: 100%;
+    padding: 1.2em 0; 
+    text-align: center;
+    border: none;
+    background-color: rgb(240, 240, 240); /* Fondo un poco más claro para ítems en móvil */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+    color: #242424 !important;
+    border-radius: 0;
   }
 
-  .top-bar-item {
-    padding: 1.5em 2em;
-    color: #242424 !important;
-    border: 1px solid #242424;
-    border-top: 0;
-    border-bottom: 0;
-    border-right: 0;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.2em;
-    height: 20px;
+  /* El botón lila también se muestra como un ítem de menú en móvil */
+  .top-bar-item.btn-highlight {
+      background-color: #8a63d2; 
+      color: rgb(255, 255, 255) !important; 
+      border-bottom: none; /* No necesita borde inferior si es el último */
+  }
+  
+  .top-bar-item:not(.btn-highlight):hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  /* Eliminar borde inferior del último ítem si no es el botón lila */
+  .top-bar-right .top-bar-item:not(.btn-highlight):last-child {
+      border-bottom: none;
+  }
+
+  /* Mostrar los ítems cuando el menú está abierto */
+  .top-bar-item.visible {
+    display: block;
   }
 
   .mobile-menu {
-    display: none;
-    background-color: #242424;
-    color: rgb(230, 230, 230);
-    padding: 0 1.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.2em;
-    cursor: pointer;
-    border-left: 1px solid #242424;
-    height: 77px;
+    display: flex;
+    background-color: transparent; 
+  }
+  
+  .logo {
+    padding-left: 1.5em; 
+    padding-right: 0;
   }
 
-  .mobile-menu div {
-    width: 2em;
-    height: 5px;
-    background-color: rgb(230, 230, 230);
-    margin-bottom: 0.3em;
-  }
-
-  .mobile-menu div:last-child {
-    margin-bottom: 0 !important;
-  }
-
-  .top-bar-item:hover,
-  .menu-open:hover {
-    background-color: #242424;
-    color: rgb(230, 230, 230) !important;
-  }
-
-  .menu-open:hover div {
-    background-color: rgb(230, 230, 230);
-  }
-
-  @media (max-width: 768px) {
-    .top-bar {
-      display: block;
-      transition: background-color 0.7s ease;
-    }
-
-    .top-bar-left {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .top-bar-right {
-      flex-direction: column;
-    }
-
-    .top-bar-item {
+  /* Ocultar selector de idioma y botón circular en móvil si no se usan */
+  .language-selector, .circular-icon-btn {
       display: none;
-      width: 100%;
-      padding-left: 0;
-      padding-right: 0;
-      text-align: center;
-      border: 1px solid #242424;
-      border-top: 0;
-      height: auto;
-      color: #242424;
-      background-color: rgba(230, 230, 230);
-    }
-
-    .top-bar-item:first-child {
-      border-top: 1px solid #242424;
-    }
-
-    .solid {
-      background-color: rgb(230, 230, 230);
-    }
-
-    .visible {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mobile-menu {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .menu-open {
-      background-color: transparent;
-    }
-
-    .menu-open div {
-      background-color: #242424;
-    }
-
-    .logo {
-      padding-left: 0.2em;
-    }
   }
+}
