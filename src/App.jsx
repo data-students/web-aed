@@ -12,10 +12,62 @@ Link.propTypes = {
 };
 
 
+const MissionIcon = ({ icon, title, description }) => (
+  <div className='mission-icon'>
+    <div className='mission-icon-symbol'>{icon}</div>
+    <h4 className='mission-title'>{title}</h4>
+    <p className='mission-description'>{description}</p>
+  </div>
+);
+MissionIcon.propTypes = {
+  icon: PropTypes.element.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
+
 const Home = () => (
   <div className='section' id='nosaltres'>
-    <h1>Som l&apos;Associació d&apos;Estudiants de Dades!</h1>
-    <h2>Som l&apos;associació estudiantil del <Link href='https://dse.upc.edu'>grau en ciència i enginyeria de dades</Link> de la <Link href='https://upc.edu'>UPC</Link>. Treballem per a ajudar a millorar el grau, crear un vincle entre estudiants i alumni, organitzar activitats com la <Link href='https://datathon.cat'>Datathon FME</Link>, compartir experiències de l&apos;alumnat i promoure l&apos;ecosistema de les dades català, entre moltes altres!</h2>
+    <h1>Associació<br />d&apos;Estudiants de Dades</h1>
+    <h3>Som l&apos;associació estudiantil del <Link href='https://dse.upc.edu'>grau en Ciència i Enginyeria de Dades</Link> de la <Link href='https://upc.edu'>UPC</Link>. </h3>
+  </div>
+);
+
+const Objectius = () => (
+  <div className='section' id='objectius'>
+    <h2 className='subtitle-dark'>Els nostres objectius</h2>
+    <div className='mission-grid'>
+      <MissionIcon 
+        icon={
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        }
+        title="Educació"
+        description="Millorar el grau i fer divulgació en ciència de dades i IA"
+      />
+      <MissionIcon 
+        icon={
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        }
+        title="Comunitat"
+        description="Crear vincles entre estudiants, alumni i professionals"
+      />
+      <MissionIcon 
+        icon={
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        }
+        title="Futur"
+        description="Impulsar el futur de l'ecosistema tecnològic català"
+      />
+    </div>
   </div>
 );
 
@@ -42,13 +94,13 @@ Card.propTypes = {
 
 const Projects = () => (
   <div className='section' id='projectes'>
-    <h2 className='subtitle'>Els nostres projectes</h2>
+    <h2 className='subtitle-dark'>Els nostres projectes</h2>
     <div className='grid'>
       <Card
         title='Datathon FME'
         img='datathon.webp'
         text='La datató més gran de Catalunya, amb 300 participants. Un esdeveniment de 30 hores en què els equips resolen reptes reals amb ciència de dades i IA.'
-        button_text='Lloc web oficial'
+        button_text='Saber-ne més!'
         href='https://datathon.cat'
       />
       <Card
@@ -62,14 +114,14 @@ const Projects = () => (
         title='Apunts Dades'
         img='apunts.webp'
         text='Un recull d&apos;apunts i exàmens de les assignatures del nostre grau. Amb una plataforma col·laborativa on preguntar i resoldre dubtes.'
-        button_text='Entra-hi!'
+        button_text='Saber-ne més!'
         href='https://apuntsdades.com'
       />
       <Card
         title='Plataforma virtual'
         img='alumni-mes.webp'
         text='Administrem un club en línia a la plataforma UPC AlumniMés, on compartir experiències i ofertes de feina per a la comunitat.'
-        button_text="Apunta-t'hi!"
+        button_text="Saber-ne més!"
         href='https://alumnimes.upc.edu/groups/30/feed'
       />
     </div>
@@ -82,11 +134,9 @@ const JoinUs = () => (
     <div className='grid'>
       <div className='grid-text'>
         <h3>Si ets estudiant o <i>alumni</i> del grau en ciència i enginyeria de dades de la UPC, pots unir-te a l&apos;associació!</h3>
-        <p>És completament gratuït!</p>
         <p>Si vols col·laborar activament, escriu-nos a <Link href='mailto:hola@aed.cat'>hola@aed.cat</Link>! Estem oberts a noves idees!
         </p>
       </div>
-      <a className='button' href='https://form.typeform.com/to/h54C62uj' target='blank' rel='noopener'>Em vull unir!</a>
     </div>
   </div >
 );
@@ -110,6 +160,7 @@ function App() {
     <>
       <TopBar />
       <Home />
+      <Objectius />
       <Projects />
       <JoinUs />
       <Footer />
