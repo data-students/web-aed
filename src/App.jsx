@@ -118,9 +118,9 @@ const Projects = () => (
         href='https://apuntsdades.com'
       />
       <Card
-        title='Plataforma virtual'
-        img='alumni-mes.webp'
-        text='Administrem un club en línia a la plataforma UPC AlumniMés, on compartir experiències i ofertes de feina per a la comunitat.'
+        title='DataTalks'
+        img='placeholder.png'
+        text='Ponents d&apos;arreu del món presenten com les dades afecten els diferents ámbits del coneixement tecnologia.'
         button_text="Saber-ne més!"
         href='https://alumnimes.upc.edu/groups/30/feed'
       />
