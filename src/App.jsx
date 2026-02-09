@@ -1,5 +1,5 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import TopBar from './TopBar';
 import './App.css';
 
@@ -11,7 +11,127 @@ Link.propTypes = {
   children: PropTypes.string.isRequired,
 };
 
+const Contact = () => { // Part del formulari de contacte per les data-talks
+  const [state, setState] = useState({
+    submitted: false,
+    submitting: false,
+    error: false
+  });
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setState({ submitting: true, submitted: false, error: false });
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+      
+      if (response.ok) {
+        setState({ submitting: false, submitted: true, error: false });
+        form.reset();
+      } else {
+        setState({ submitting: false, submitted: false, error: true });
+      }
+    } catch (error) {
+      setState({ submitting: false, submitted: false, error: true });
+    }
+  };
+
+  return (
+    <div id='Colaborar'>
+      <h2 className='subtitle-dark'>
+        Busquem gent interessada en exposar-nos el seu treball i les seves investigacions! 
+        Si vols col·laborar amb l&apos;AED i presentar-nos el teu treball, omple el formulari:
+      </h2>
+      
+      {state.submitted && (
+        <div className="form-success">
+          <p>Gràcies! El teu missatge s'ha enviat correctament.</p>
+        </div>
+      )}
+      
+      {state.error && (
+        <div className="form-error">
+          <p>Hi ha hagut un error. Torna-ho a provar o envia'ns un correu directe.</p>
+        </div>
+      )}
+      
+      <form onSubmit={handleSubmit} className="contact-form">
+        <div className="form-group">
+          <label htmlFor="name">Nom complet *</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            required 
+            placeholder="El teu nom"
+            disabled={state.submitting}
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="email">Correu electrònic *</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            placeholder="exemple@email.com"
+            disabled={state.submitting}
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="subject">Assumpte *</label>
+          <input 
+            type="text" 
+            id="subject" 
+            name="subject" 
+            required 
+            placeholder="Sobre què vols parlar?"
+            disabled={state.submitting}
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="message">Missatge *</label>
+          <textarea 
+            id="message" 
+            name="message" 
+            required 
+            rows="5"
+            placeholder="Explica'ns la teva proposta..."
+            disabled={state.submitting}
+          ></textarea>
+        </div>
+        
+        <div className="form-group">
+          <button 
+            type="submit" 
+            className="button submit-button"
+            disabled={state.submitting}
+          >
+            {state.submitting ? 'Enviant...' : 'Enviar missatge'}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+const Home = () => (
+  <div className='section' id='nosaltres'>
+    <h1>Associació<br />d&apos;Estudiants de Dades</h1>
+    <h2>Som l&apos;associació estudiantil del <Link href='https://dse.upc.edu'>grau en Ciència i Enginyeria de Dades</Link> de la <Link href='https://upc.edu'>UPC</Link>. </h2>
+  </div>
+);
+
+// Rest of your components stay the same...
 const MissionIcon = ({ icon, title, description }) => (
   <div className='mission-icon'>
     <div className='mission-icon-symbol'>{icon}</div>
@@ -24,14 +144,6 @@ MissionIcon.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
-
-const Home = () => (
-  <div className='section' id='nosaltres'>
-    <h1>Associació<br />d&apos;Estudiants de Dades</h1>
-    <h2>Som l&apos;associació estudiantil del <Link href='https://dse.upc.edu'>grau en Ciència i Enginyeria de Dades</Link> de la <Link href='https://upc.edu'>UPC</Link>. </h2>
-          <Contact />
-  </div>
-);
 
 const Objectius = () => (
   <div className='section' id='objectius'>
@@ -71,7 +183,6 @@ const Objectius = () => (
     </div>
   </div>
 );
-
 
 const Card = ({ title, img, text, button_text = 'Més informació', href }) => (
   <div className='card'>
@@ -118,13 +229,6 @@ const Projects = () => (
         button_text='Saber-ne més!'
         href='https://apuntsdades.com'
       />
-      {/*<Card
-        title='Plataforma virtual'
-        img='alumni-mes.webp'
-        text='Administrem un club en línia a la plataforma UPC AlumniMés, on compartir experiències i ofertes de feina per a la comunitat.'
-        button_text="Saber-ne més!"
-        href='https://alumnimes.upc.edu/groups/30/feed'
-      />*/}
       <Card
           title='DataTalks'
           img='placeholder.png'
@@ -133,74 +237,7 @@ const Projects = () => (
           href='mailto:hola@aed.cat'
         />
     </div>
-  </div>
-);
-
-const Contact = () => (
-  <div className='section' id='Colaborar'>
-    <h2 className='subtitle-dark'>
-      Busquem gent interessada en exposar-nos el seu treball i les seves investigacions! 
-      Si vols col·laborar amb l&apos;AED i presentar-nos el teu treball, omple el formulari:
-    </h2>
-    
-    <form 
-      name="contact" 
-      method="POST" 
-      data-netlify="true"
-      className="contact-form"
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      
-      <div className="form-group">
-        <label htmlFor="name">Nom complet *</label>
-        <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          required 
-          placeholder="El teu nom"
-        />
-      </div>
-      
-      <div className="form-group">
-        <label htmlFor="email">Correu electrònic *</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          required 
-          placeholder="exemple@email.com"
-        />
-      </div>
-      
-      <div className="form-group">
-        <label htmlFor="subject">Assumpte *</label>
-        <input 
-          type="text" 
-          id="subject" 
-          name="subject" 
-          required 
-          placeholder="Sobre què vols parlar?"
-        />
-      </div>
-      
-      <div className="form-group">
-        <label htmlFor="message">Missatge *</label>
-        <textarea 
-          id="message" 
-          name="message" 
-          required 
-          rows="5"
-          placeholder="Explica'ns la teva proposta..."
-        ></textarea>
-      </div>
-      
-      <div className="form-group">
-        <button type="submit" className="button submit-button">
-          Enviar missatge
-        </button>
-      </div>
-    </form>
+    <Contact />
   </div>
 );
 
