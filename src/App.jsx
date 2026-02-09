@@ -28,7 +28,8 @@ MissionIcon.propTypes = {
 const Home = () => (
   <div className='section' id='nosaltres'>
     <h1>Associació<br />d&apos;Estudiants de Dades</h1>
-    <h3>Som l&apos;associació estudiantil del <Link href='https://dse.upc.edu'>grau en Ciència i Enginyeria de Dades</Link> de la <Link href='https://upc.edu'>UPC</Link>. </h3>
+    <h2>Som l&apos;associació estudiantil del <Link href='https://dse.upc.edu'>grau en Ciència i Enginyeria de Dades</Link> de la <Link href='https://upc.edu'>UPC</Link>. </h2>
+          <Contact />
   </div>
 );
 
@@ -117,14 +118,89 @@ const Projects = () => (
         button_text='Saber-ne més!'
         href='https://apuntsdades.com'
       />
-      <Card
-        title='DataTalks'
-        img='placeholder.png'
-        text='Ponents d&apos;arreu del món presenten com les dades afecten els diferents ámbits del coneixement tecnologia.'
+      {/*<Card
+        title='Plataforma virtual'
+        img='alumni-mes.webp'
+        text='Administrem un club en línia a la plataforma UPC AlumniMés, on compartir experiències i ofertes de feina per a la comunitat.'
         button_text="Saber-ne més!"
         href='https://alumnimes.upc.edu/groups/30/feed'
-      />
+      />*/}
+      <Card
+          title='DataTalks'
+          img='placeholder.png'
+          text="Ponents d'arreu del món presenten com les dades afecten els diferents ámbits del coneixement tecnologia."
+          button_text="Pròximament"
+          href='mailto:hola@aed.cat'
+        />
     </div>
+  </div>
+);
+
+const Contact = () => (
+  <div className='section' id='Colaborar'>
+    <h2 className='subtitle-dark'>
+      Busquem gent interessada en exposar-nos el seu treball i les seves investigacions! 
+      Si vols col·laborar amb l&apos;AED i presentar-nos el teu treball, omple el formulari:
+    </h2>
+    
+    <form 
+      name="contact" 
+      method="POST" 
+      data-netlify="true"
+      className="contact-form"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      
+      <div className="form-group">
+        <label htmlFor="name">Nom complet *</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          required 
+          placeholder="El teu nom"
+        />
+      </div>
+      
+      <div className="form-group">
+        <label htmlFor="email">Correu electrònic *</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          required 
+          placeholder="exemple@email.com"
+        />
+      </div>
+      
+      <div className="form-group">
+        <label htmlFor="subject">Assumpte *</label>
+        <input 
+          type="text" 
+          id="subject" 
+          name="subject" 
+          required 
+          placeholder="Sobre què vols parlar?"
+        />
+      </div>
+      
+      <div className="form-group">
+        <label htmlFor="message">Missatge *</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          required 
+          rows="5"
+          placeholder="Explica'ns la teva proposta..."
+        ></textarea>
+      </div>
+      
+      <div className="form-group">
+        <button type="submit" className="button submit-button">
+          Enviar missatge
+        </button>
+      </div>
+    </form>
   </div>
 );
 
