@@ -231,7 +231,7 @@ const Projects = () => (
       />
       <Card
           title='DataTalks'
-          img='placeholder.png'
+          img='dataTalks.webp'
           text="Ponents d'arreu del món presenten com les dades afecten els diferents ámbits del coneixement tecnologia."
           button_text="Pròximament"
           href='mailto:hola@aed.cat'
