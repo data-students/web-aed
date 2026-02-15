@@ -11,7 +11,7 @@ Link.propTypes = {
   children: PropTypes.string.isRequired,
 };
 
-const Contact = () => { // Part del formulari de contacte per les data-talks
+const Contact = () => { // Part del formulari de contacte pels voluntaris
   const [state, setState] = useState({
     submitted: false,
     submitting: false,
@@ -44,10 +44,6 @@ const Contact = () => { // Part del formulari de contacte per les data-talks
 
   return (
     <div id='Colaborar'>
-      <h2 className='subtitle-dark'>
-        Busquem gent interessada en exposar-nos el seu treball i les seves investigacions! 
-        Si vols col·laborar amb l&apos;AED i presentar-nos el teu treball, omple el formulari:
-      </h2>
       
       {state.submitted && (
         <div className="form-success">
@@ -69,7 +65,7 @@ const Contact = () => { // Part del formulari de contacte per les data-talks
             id="name" 
             name="name" 
             required 
-            placeholder="El teu nom"
+            placeholder="El Teu Nom"
             disabled={state.submitting}
           />
         </div>
@@ -230,28 +226,30 @@ const Projects = () => (
         href='https://apuntsdades.com'
       />
       <Card
-          title='DataTalks'
-          img='dataTalks.webp'
-          text="Ponents d'arreu del món presenten com les dades afecten els diferents ámbits del coneixement tecnologia."
+          title='Data Talks'
+          img='dataTalks.svg'
+          text="Aprèn sobre la ciència de dades i les seves aplicacions de la mà de ponents amb àmplia experiència en el sector."
           button_text="Pròximament"
-          href='mailto:hola@aed.cat'
+          // href='mailto:hola@aed.cat'
         />
     </div>
-    <Contact />
   </div>
 );
 
 const JoinUs = () => (
   <div className='section' id='unir-se'>
-    <h2 className='subtitle'>Vols unir-te?</h2>
-    <div className='grid'>
-      <div className='grid-text'>
-        <h3>Si ets estudiant o <i>alumni</i> del grau en ciència i enginyeria de dades de la UPC, pots unir-te a l&apos;associació!</h3>
-        <p>Si vols col·laborar activament, escriu-nos a <Link href='mailto:hola@aed.cat'>hola@aed.cat</Link>! Estem oberts a noves idees!
-        </p>
-      </div>
+  <h3 style={{ textAlign: 'center' }}>Vols col·laborar?</h3>
+  <div className='grid'>
+    <div className='grid-text'>
+      <h4 style={{ textAlign: 'center' }}> Si ets estudiant o <i>alumni</i> del grau en Ciència i Enginyeria de Dades de la UPC, pots unir-te a l&apos;associació!</h4>
+      <h4 style={{ textAlign: 'center' }}> També estem oberts a noves idees i col·laboracions amb altres entitats!</h4>
+      <br/>
+      <br/>
     </div>
-  </div >
+  </div>
+        <Contact />
+
+      </div>
 );
 
 const Footer = () => (
