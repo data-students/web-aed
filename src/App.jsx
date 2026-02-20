@@ -229,8 +229,8 @@ const Projects = () => (
           title='Data Talks'
           img='dataTalks.svg'
           text="Aprèn sobre la ciència de dades i les seves aplicacions de la mà de ponents amb àmplia experiència en el sector."
-          button_text="Pròximament"
-          // href='mailto:hola@aed.cat'
+          button_text="Consulta l'horari de les properes xerrades"
+          href=' https://luma.com/data-talks'
         />
     </div>
   </div>
