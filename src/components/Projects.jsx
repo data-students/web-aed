@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import './Projects.css';
 
-const ProjectRow = ({ title, img, text, button_text = 'Més informació', href, button_text_2, href_2, reverse }) => (
+const ProjectRow = ({ title, img, text, button_text = 'Més informació', href, button_text_2, href_2, reverse, imageFit = 'cover' }) => (
   <div className={`project-row ${reverse ? 'reverse' : ''}`}>
     <div className="project-image-container">
-      <img src={img} alt={title} className="project-image" />
+      <img src={img} alt={title} className="project-image" style={{ objectFit: imageFit, padding: imageFit === 'contain' ? '0.2rem' : '0' }} />
     </div>
     <div className="project-content">
       <h3 className="project-title">{title}</h3>
@@ -31,7 +31,8 @@ ProjectRow.propTypes = {
   href: PropTypes.string.isRequired,
   button_text_2: PropTypes.string,
   href_2: PropTypes.string,
-  reverse: PropTypes.bool
+  reverse: PropTypes.bool,
+  imageFit: PropTypes.oneOf(['cover', 'contain'])
 };
 
 const Projects = () => (
@@ -57,6 +58,7 @@ const Projects = () => (
           button_text_2="Vídeos"
           href_2="https://www.youtube.com/playlist?list=PL0PIFoo8yCbjjiyfYopBpNXaf-T47_Abx"
           reverse={true}
+          imageFit="contain"
         />
         <ProjectRow
           title='Apunts Dades'
