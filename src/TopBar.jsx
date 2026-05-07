@@ -54,6 +54,7 @@ function TopBar() {
         <TopBarItem id='' menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Qui som?</TopBarItem>
         <TopBarItem id='objectius' menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Objectius</TopBarItem>
         <TopBarItem id='projectes' menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Projectes</TopBarItem>
+        <TopBarItem id='equip' menuOpen={menuOpen} setMenuOpen={setMenuOpen}>Equip</TopBarItem>
         {/* Botón resaltado con la prop isHighlight */}
         <TopBarItem id='unir-se' menuOpen={menuOpen} setMenuOpen={setMenuOpen} isHighlight>Uneix-te!</TopBarItem>
       </div>

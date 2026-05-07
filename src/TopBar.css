@@ -161,7 +161,6 @@
   cursor: pointer;
   border-left: none; 
   height: 77px; 
-  display: flex; 
   flex-direction: column;
   justify-content: center;
   align-items: center;

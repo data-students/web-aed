@@ -1,0 +1,135 @@
+.projects-section {
+  background-color: #d1bdf0; /* Mid-tone purple */
+  padding: 120px 2em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.projects-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* Spacing between the white cards */
+}
+
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  background-color: #ffffff; /* White rectangle for the project */
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: none; /* Shadow removed as requested */
+}
+
+.project-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-image-container {
+  flex: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none; /* Shadow removed as requested */
+  background-color: #f8fafc; /* Very subtle gray inside the white card */
+  aspect-ratio: 16 / 9;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+}
+
+.project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important; /* Dark text inside white card */
+  margin-bottom: 1rem !important;
+  letter-spacing: -0.02em;
+}
+
+.project-text {
+  font-size: 1.15rem !important;
+  color: #475569 !important; /* Dark slate text */
+  line-height: 1.7 !important;
+  margin-bottom: 2rem !important;
+  text-align: left !important;
+}
+
+.project-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #8a63d2; /* Purple button inside white card */
+  color: #ffffff !important;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  border: 1px solid #8a63d2;
+}
+
+.project-btn:hover {
+  background-color: #764dc0;
+  border-color: #764dc0;
+  transform: translateY(-1px);
+}
+
+.project-btn-secondary {
+  background-color: transparent;
+  color: #8a63d2 !important;
+}
+
+.project-btn-secondary:hover {
+  background-color: #f8fafc;
+  color: #764dc0 !important;
+  border-color: #764dc0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .projects-list {
+    gap: 3rem;
+  }
+  
+  .project-row, .project-row.reverse {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem; /* Less padding on mobile */
+  }
+  
+  .project-image-container {
+    width: 100%;
+  }
+  
+  .project-content {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .project-text {
+    text-align: center !important;
+  }
+}

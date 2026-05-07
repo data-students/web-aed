@@ -1,0 +1,136 @@
+.home-section {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #27272a; /* Deep, professional slate/dark blue */
+  overflow: hidden;
+  padding: 140px 2em 80px;
+  z-index: 1;
+}
+
+/* Subtle, clean graph dots pattern adapted for dark mode */
+.graph-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(#33554a 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.home-content {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: rgba(138, 99, 210, 0.1); /* Very subtle purple tint */
+  border: 1px solid rgba(138, 99, 210, 0.2);
+  border-radius: 9999px;
+  color: #c4b5fd; /* Light purple text */
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: 4.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  color: #f8fafc; /* Near white */
+  margin-bottom: 1.5rem !important;
+  letter-spacing: -0.03em;
+}
+
+/* Solid color highlight */
+.highlight-solid {
+  color: #a78bfa; /* Brighter purple for dark background */
+}
+
+.hero-description {
+  font-size: 1.25rem !important;
+  color: #e8eaed !important;
+  max-width: 650px;
+  margin-bottom: 3rem !important;
+  line-height: 1.6 !important;
+  text-align: center;
+}
+
+/* Clean, solid buttons */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-solid-primary {
+  padding: 14px 32px;
+  background-color: #8a63d2;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease;
+  border: 1px solid #8a63d2;
+  font-size: 1.05rem;
+}
+
+.btn-solid-primary:hover {
+  background-color: #764dc0;
+  border-color: #764dc0;
+}
+
+.btn-solid-secondary {
+  padding: 14px 32px;
+  background-color: rgba(255, 255, 255, 0.05); /* Slightly visible button */
+  color: #f8fafc !important;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.05rem;
+}
+
+.btn-solid-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem !important;
+  }
+  .hero-description {
+    font-size: 1.1rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-solid-primary, .btn-solid-secondary {
+    width: 100%;
+  }
+}
