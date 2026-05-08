@@ -1,5 +1,5 @@
 .projects-section {
-  color-scheme: only dark;
+  color-scheme: only light;
   background-color: #d1bdf0 !important; /* Mid-tone purple */
   padding: 120px 2em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -25,7 +25,7 @@
   padding: 3rem;
   border-radius: 24px;
   box-shadow: none; /* Shadow removed as requested */
-  color-scheme: only dark;
+  color-scheme: only light;
 }
 
 .project-row.reverse {
@@ -86,6 +86,7 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .project-btn {
@@ -137,9 +138,62 @@
   .project-content {
     align-items: center;
     text-align: center;
+    width: 100%;
   }
   
   .project-text {
     text-align: center !important;
+  }
+
+  .project-actions {
+    justify-content: center;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .projects-section {
+    background-color: #d1bdf0 !important;
+  }
+
+  .project-row {
+    background-color: #ffffff !important;
+  }
+
+  .project-image-container {
+    background-color: #f8fafc !important;
+  }
+
+  .project-title {
+    color: #0f172a !important;
+  }
+
+  .project-text {
+    color: #475569 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .project-row,
+  .project-row.reverse {
+    padding: 2rem 1.5rem;
+  }
+
+  .project-title {
+    font-size: 2.1rem !important;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project-btn {
+    width: 100%;
+    text-align: center;
   }
 }

@@ -3,9 +3,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: only dark; /* Prevent browser auto-dark mode inversion */
-  color: white;
-  background-color: #2b2632;
+  color-scheme: only light;
+  color: #242424;
+  background-color: #f0f0f0;
 
 
   font-synthesis: none;
@@ -16,6 +16,10 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: only light;
+  background-color: #f0f0f0;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 #root {
@@ -136,6 +140,26 @@ section {
 
 body {
   line-height: 1;
+  color: #242424;
+  background-color: #f0f0f0;
+}
+
+img,
+svg,
+video {
+  forced-color-adjust: none;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  html,
+  body {
+    color-scheme: only light;
+    color: #242424;
+    background-color: #f0f0f0;
+  }
 }
 
 ol,

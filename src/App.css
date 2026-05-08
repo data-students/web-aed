@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color-scheme: only light;
 }
 
 html, body {
@@ -17,6 +18,7 @@ body {
   line-height: 1.6;
   background-color: #f0f0f0; 
   overflow-x: hidden; 
+  color: #242424;
 }
 
 
@@ -110,17 +112,16 @@ body {
 }
 
 .team-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  justify-items: center;
   gap: 3rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .team-member {
-  flex: 0 1 calc(25% - 3rem); 
-  min-width: 200px;
+  width: min(100%, 220px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,6 +139,8 @@ body {
   font-size: 1em;
   color: #8a63d2 !important;
   margin: 0 !important;
+  text-align: center;
+  max-width: 100%;
 }
 
 .member-img {
@@ -175,11 +178,22 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 }
 
 .grid-text {
   flex-grow: 1;
   max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.grid-text h4 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -275,6 +289,8 @@ i {
   font-size: 16px;
   transition: border-color 0.3s;
   font-family: inherit;
+  background-color: #ffffff;
+  color: #242424;
 }
 
 .form-group input:focus,
@@ -320,6 +336,28 @@ i {
   width: 100%;
 }
 
+@media (prefers-color-scheme: dark) {
+  body,
+  #objectius,
+  #equip {
+    background-color: #f1f5f9 !important;
+    color: #242424 !important;
+  }
+
+  .contact-form,
+  .form-group input,
+  .form-group textarea {
+    background-color: #ffffff !important;
+    color: #242424 !important;
+  }
+
+  #unir-se,
+  .footer {
+    background-color: #2b2632 !important;
+    color: #ffffff !important;
+  }
+}
+
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 992px) {
   #objectius, #unir-se, .footer {
@@ -358,5 +396,16 @@ i {
   
   .team-grid {
     gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2.2rem !important;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -122,6 +122,23 @@
     font-size: 1.1rem !important;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .home-section {
+    background-color: #27272a !important;
+    color: #f8fafc !important;
+  }
+
+  .hero-title,
+  .hero-description {
+    color: #f8fafc !important;
+  }
+
+  .badge {
+    background-color: rgba(138, 99, 210, 0.1) !important;
+    color: #c4b5fd !important;
+  }
+}
 @media (max-width: 480px) {
   .hero-title {
     font-size: 2.5rem !important;
