@@ -39,15 +39,47 @@ TopBarItem.propTypes = {
   isHighlight: PropTypes.bool,
 };
 
-const languages = ['ca', 'en'];
+const languageLabels = {
+  ca: 'CA',
+  en: 'EN',
+};
 
 function TopBar({ language, setLanguage, t }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
+  const alternativeLanguage = language === 'ca' ? 'en' : 'ca';
+
+  const handleLanguageChange = () => {
+    setLanguage(alternativeLanguage);
+    setLanguageOpen(false);
+  };
 
   return (
     <div className={`top-bar ${menuOpen ? ' solid' : ''}`}>
       <div className="top-bar-left">
         <img className="logo" src={aedLogo} alt="AED" width="161" height="72" />
+        <div className="language-selector">
+          <button
+            type="button"
+            className={`language-button current${languageOpen ? ' open' : ''}`}
+            onClick={() => setLanguageOpen((prev) => !prev)}
+            aria-label={t.languageLabel}
+            aria-expanded={languageOpen}
+            aria-haspopup="menu"
+          >
+            {languageLabels[language]}
+          </button>
+          {languageOpen && (
+            <button
+              type="button"
+              className="language-button language-option"
+              onClick={handleLanguageChange}
+              role="menuitem"
+            >
+              {languageLabels[alternativeLanguage]}
+            </button>
+          )}
+        </div>
         <MenuButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>
       <div className="top-bar-right">
@@ -56,19 +88,6 @@ function TopBar({ language, setLanguage, t }) {
         <TopBarItem id="projectes" menuOpen={menuOpen} setMenuOpen={setMenuOpen}>{t.projects}</TopBarItem>
         <TopBarItem id="equip" menuOpen={menuOpen} setMenuOpen={setMenuOpen}>{t.team}</TopBarItem>
         <TopBarItem id="unir-se" menuOpen={menuOpen} setMenuOpen={setMenuOpen} isHighlight>{t.join}</TopBarItem>
-        <div className={`language-selector${menuOpen ? ' visible' : ''}`} aria-label={t.languageLabel}>
-          {languages.map((languageCode) => (
-            <button
-              key={languageCode}
-              type="button"
-              className={`language-button${language === languageCode ? ' active' : ''}`}
-              onClick={() => setLanguage(languageCode)}
-              aria-pressed={language === languageCode}
-            >
-              {languageCode.toUpperCase()}
-            </button>
-          ))}
-        </div>
       </div>
     </div>
   );
