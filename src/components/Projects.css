@@ -1,7 +1,9 @@
 .projects-section {
-  background-color: #d1bdf0; /* Mid-tone purple */
+  color-scheme: only dark;
+  background-color: #d1bdf0 !important; /* Mid-tone purple */
   padding: 120px 2em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  forced-color-adjust: none;
 }
 
 .projects-container {
@@ -43,8 +45,9 @@
 }
 
 .project-image-container img[src$=".svg"] {
-  /* Prevent the browser from applying a negative filter to your SVG */
+  /* This prevents Samsung from applying its proprietary 'Night Mode' filter */
   filter: none !important;
+  -webkit-filter: none !important;
 }
 
 .project-image {
