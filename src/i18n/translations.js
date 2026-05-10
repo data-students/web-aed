@@ -178,8 +178,8 @@ const translations = {
     },
     join: {
       title: 'Want to collaborate?',
-      studentText: 'If you are a student or alumni of the UPC Data Science and Engineering degree, you can join the association.',
-      collaborationText: 'We are also open to new ideas and collaborations with other organizations.',
+      studentText: 'If you are a student or alumni of the BSc in Data Science and Engineering at UPC, you can join the association!',
+      collaborationText: 'We are also open to new ideas and collaborations with other organizations!',
     },
     contact: {
       success: 'Thank you. Your message has been sent successfully.',

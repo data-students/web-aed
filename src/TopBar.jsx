@@ -44,6 +44,25 @@ const languageLabels = {
   en: 'EN',
 };
 
+const GlobeIcon = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="globe-icon"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+);
+
 function TopBar({ language, setLanguage, t }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
@@ -67,17 +86,20 @@ function TopBar({ language, setLanguage, t }) {
             aria-expanded={languageOpen}
             aria-haspopup="menu"
           >
-            {languageLabels[language]}
+            <GlobeIcon />
+            <span>{languageLabels[language]}</span>
           </button>
           {languageOpen && (
-            <button
-              type="button"
-              className="language-button language-option"
-              onClick={handleLanguageChange}
-              role="menuitem"
-            >
-              {languageLabels[alternativeLanguage]}
-            </button>
+            <div className="language-dropdown">
+              <button
+                type="button"
+                className="language-button language-option"
+                onClick={handleLanguageChange}
+                role="menuitem"
+              >
+                {languageLabels[alternativeLanguage]}
+              </button>
+            </div>
           )}
         </div>
         <MenuButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
