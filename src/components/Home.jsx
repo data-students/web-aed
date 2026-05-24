@@ -6,7 +6,6 @@ const Home = ({ t }) => (
     <div className="graph-pattern"></div>
 
     <div className="home-content">
-      <div className="badge">{t.badge}</div>
       <h1 className="hero-title">
         {t.titlePrefix}<br />
         {t.titleMiddle && `${t.titleMiddle} `}
@@ -19,7 +18,6 @@ const Home = ({ t }) => (
 
 Home.propTypes = {
   t: PropTypes.shape({
-    badge: PropTypes.string.isRequired,
     titlePrefix: PropTypes.string.isRequired,
     titleMiddle: PropTypes.string.isRequired,
     titleHighlight: PropTypes.string.isRequired,

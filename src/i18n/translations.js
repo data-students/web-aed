@@ -22,11 +22,10 @@ const translations = {
       languageLabel: 'Idioma',
     },
     home: {
-      badge: 'Ciència i Enginyeria de Dades UPC',
       titlePrefix: "Associació d'Estudiants",
       titleMiddle: 'de',
       titleHighlight: 'Dades',
-      description: 'Connectant talent, dades i futur.',
+      description: 'Connectant talent, dades i futur. Som l\'associació d\'estudiants del grau en Ciència i Enginyeria de Dades de la UPC.',
     },
     goals: {
       title: 'Els nostres objectius',
@@ -117,11 +116,10 @@ const translations = {
       languageLabel: 'Language',
     },
     home: {
-      badge: 'UPC Data Science and Engineering',
       titlePrefix: 'Data Students',
       titleMiddle: '',
       titleHighlight: 'Association',
-      description: 'Connecting talent, data and the future.',
+      description: 'Connecting talent, data and the future. We are the student association of the BSc in Data Science and Engineering at UPC.',
     },
     goals: {
       title: 'Our goals',

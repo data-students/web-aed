@@ -33,19 +33,6 @@
   z-index: 2;
 }
 
-.badge {
-  display: inline-block;
-  padding: 6px 16px;
-  background-color: rgba(138, 99, 210, 0.1); /* Very subtle purple tint */
-  border: 1px solid rgba(138, 99, 210, 0.2);
-  border-radius: 9999px;
-  color: #c4b5fd; /* Light purple text */
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-}
 
 .hero-title {
   font-size: 4.5rem !important;
@@ -134,10 +121,7 @@
     color: #f8fafc !important;
   }
 
-  .badge {
-    background-color: rgba(138, 99, 210, 0.1) !important;
-    color: #c4b5fd !important;
-  }
+
 }
 @media (max-width: 480px) {
   .hero-title {
