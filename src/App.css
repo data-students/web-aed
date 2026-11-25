@@ -112,16 +112,14 @@ body {
 }
 
 .team-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; 
-  gap: 3rem;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .team-member {
-  width: min(100%, 220px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -359,6 +357,45 @@ i {
 }
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
+/* Equipo: 3 por fila (rejilla de 6 columnas, cada miembro ocupa 2) y la fila
+   incompleta centrada, para que nadie quede solo a un lado. */
+@media (max-width: 1100px) {
+  .team-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    max-width: 640px;
+  }
+
+  .team-member {
+    grid-column: span 2;
+  }
+
+  .team-member:nth-last-child(2):nth-child(3n + 1) {
+    grid-column: 2 / span 2;
+  }
+
+  .team-member:last-child:nth-child(3n + 1) {
+    grid-column: 3 / span 2;
+  }
+}
+
+/* 2 por fila, el impar centrado. */
+@media (max-width: 640px) {
+  .team-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 400px;
+  }
+
+  .team-member,
+  .team-member:nth-last-child(2):nth-child(3n + 1),
+  .team-member:last-child:nth-child(3n + 1) {
+    grid-column: span 2;
+  }
+
+  .team-member:last-child:nth-child(2n + 1) {
+    grid-column: 2 / span 2;
+  }
+}
+
 @media (max-width: 992px) {
   #objectius, #unir-se, .footer {
     padding-left: 2em !important;
@@ -367,6 +404,11 @@ i {
 }
 
 @media (max-width: 768px) {
+  #equip {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
   /* Secciones */
   .section {
     padding-top: 100px !important;
@@ -394,10 +436,6 @@ i {
     margin-bottom: 0.8em;
   }
   
-  .team-grid {
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  }
 }
 
 @media (max-width: 480px) {
@@ -407,5 +445,10 @@ i {
 
   .team-grid {
     grid-template-columns: 1fr;
+  }
+
+  .team-member,
+  .team-member:last-child:nth-child(2n + 1) {
+    grid-column: auto;
   }
 }
