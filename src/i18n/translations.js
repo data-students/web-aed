@@ -1,11 +1,9 @@
 const sharedTeamLinks = {
-  laia: { linkedin: 'https://www.linkedin.com/in/laia-mogas-pladevall/', photo: 'team/laia mogas.jfif' },
-  noa: { linkedin: 'https://www.linkedin.com/in/noa-mediavilla/', photo: 'team/noa mediavilla.jfif' },
-  arnau: { linkedin: 'https://www.linkedin.com/in/arnau-biosca-p%C3%A9rez-57254429b/', photo: 'team/arnau biosca.jfif' },
-  silvia: { linkedin: 'https://www.linkedin.com/in/s%C3%ADlvia-f-688699229/', photo: 'team/silvia fabregas.jfif' },
   roberto: { linkedin: 'https://www.linkedin.com/in/roberto-nsoni/', photo: 'team/roberto nsoni.jfif' },
-  pau: { linkedin: 'https://www.linkedin.com/in/paumilapuig/', photo: 'team/pau mila.jfif' },
   laura: { linkedin: 'https://www.linkedin.com/in/laurarebollocrespo', photo: 'team/laura rebollo.jpg' },
+  lucia: { linkedin: 'https://www.linkedin.com/in/lucia-gim%C3%A9nez-de-la-rubia-1310973b0/' },
+  ona: { linkedin: 'https://www.linkedin.com/in/ona-siscart-noguer/' },
+  pau: { linkedin: 'https://www.linkedin.com/in/paumilapuig/', photo: 'team/pau mila.jfif' },
 };
 
 const translations = {
@@ -52,7 +50,7 @@ const translations = {
       items: {
         datathon: {
           title: 'Datathon FME',
-          text: 'La datató més gran de Catalunya, amb +400 participants. Un esdeveniment de 30 hores en què els equips resolen reptes reals amb ciència de dades i IA.',
+          text: 'La datató més gran de Catalunya, amb +400 participants. Un esdeveniment de 48 hores en què els equips resolen reptes reals amb ciència de dades i IA.',
         },
         dataTalks: {
           title: 'Data Talks',
@@ -71,13 +69,11 @@ const translations = {
     team: {
       title: 'El nostre equip',
       members: [
-        { name: 'Laia Mogas', role: 'Presidenta', ...sharedTeamLinks.laia },
-        { name: 'Noa Mediavilla', role: 'Secretària', ...sharedTeamLinks.noa },
-        { name: 'Arnau Biosca', role: 'Tresorer', ...sharedTeamLinks.arnau },
-        { name: 'Sílvia Fàbregas', role: 'Vocal', ...sharedTeamLinks.silvia },
-        { name: 'Roberto Nsoni', role: 'Director Datathon', ...sharedTeamLinks.roberto },
+        { name: 'Roberto Nsoni', role: 'President', ...sharedTeamLinks.roberto },
+        { name: 'Laura Rebollo', role: 'Secretària', ...sharedTeamLinks.laura },
+        { name: 'Lucía Giménez', role: 'Tresorera', ...sharedTeamLinks.lucia },
+        { name: 'Ona Siscart', role: 'Vocal', ...sharedTeamLinks.ona },
         { name: 'Pau Milà', role: 'Director DataTalks', ...sharedTeamLinks.pau },
-        { name: 'Laura Rebollo', role: 'Directora Comunicació', ...sharedTeamLinks.laura },
       ],
     },
     join: {
@@ -146,7 +142,7 @@ const translations = {
       items: {
         datathon: {
           title: 'Datathon FME',
-          text: 'The largest datathon in Catalonia, with more than 400 participants. A 30-hour event where teams solve real challenges with data science and AI.',
+          text: 'The largest datathon in Catalonia, with more than 400 participants. A 48-hour event where teams solve real challenges with data science and AI.',
         },
         dataTalks: {
           title: 'Data Talks',
@@ -165,13 +161,11 @@ const translations = {
     team: {
       title: 'Our team',
       members: [
-        { name: 'Laia Mogas', role: 'President', ...sharedTeamLinks.laia },
-        { name: 'Noa Mediavilla', role: 'Secretary', ...sharedTeamLinks.noa },
-        { name: 'Arnau Biosca', role: 'Treasurer', ...sharedTeamLinks.arnau },
-        { name: 'Sílvia Fàbregas', role: 'Board member', ...sharedTeamLinks.silvia },
-        { name: 'Roberto Nsoni', role: 'Datathon Director', ...sharedTeamLinks.roberto },
+        { name: 'Roberto Nsoni', role: 'President', ...sharedTeamLinks.roberto },
+        { name: 'Laura Rebollo', role: 'Secretary', ...sharedTeamLinks.laura },
+        { name: 'Lucía Giménez', role: 'Treasurer', ...sharedTeamLinks.lucia },
+        { name: 'Ona Siscart', role: 'Board member', ...sharedTeamLinks.ona },
         { name: 'Pau Milà', role: 'DataTalks Director', ...sharedTeamLinks.pau },
-        { name: 'Laura Rebollo', role: 'Communications Director', ...sharedTeamLinks.laura },
       ],
     },
     join: {
