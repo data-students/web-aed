@@ -1,8 +1,8 @@
 const sharedTeamLinks = {
   roberto: { linkedin: 'https://www.linkedin.com/in/roberto-nsoni/', photo: 'team/roberto nsoni.jfif' },
   laura: { linkedin: 'https://www.linkedin.com/in/laurarebollocrespo', photo: 'team/laura rebollo.jpg' },
-  lucia: { linkedin: 'https://www.linkedin.com/in/lucia-gim%C3%A9nez-de-la-rubia-1310973b0/' },
-  ona: { linkedin: 'https://www.linkedin.com/in/ona-siscart-noguer/' },
+  lucia: { linkedin: 'https://www.linkedin.com/in/lucia-gim%C3%A9nez-de-la-rubia-1310973b0/', photo: 'team/lucia gimenez.jpg' },
+  ona: { linkedin: 'https://www.linkedin.com/in/ona-siscart-noguer/', photo: 'team/ona siscart.jpg' },
   pau: { linkedin: 'https://www.linkedin.com/in/paumilapuig/', photo: 'team/pau mila.jfif' },
 };
 
