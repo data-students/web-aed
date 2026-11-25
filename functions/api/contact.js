@@ -1,3 +1,6 @@
+const escapeHtml = (value) =>
+  String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+
 export async function onRequestPost(context) {
   try {
     const formData = await context.request.formData();
@@ -23,13 +26,13 @@ export async function onRequestPost(context) {
         from: 'Contact Form <hola@aed.cat>',
         to: ['hola@aed.cat'],
         reply_to: email,
-        subject: `[Web Contact] ${subject}`,
+        subject: `[Web Contact] ${String(subject ?? '').replace(/[\r\n]+/g, ' ').slice(0, 200)}`,
         html: `
           <h3>New Contact from Website</h3>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Subject:</strong> ${subject}</p>
-          <p><strong>Message:</strong><br/>${message.replace(/\n/g, '<br>')}</p>
+          <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+          <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
+          <p><strong>Message:</strong><br/>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
         `
       })
     });
